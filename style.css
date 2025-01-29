@@ -13,14 +13,18 @@
     font-display: swap;
 }
 
-body {
+html, body {
+    overflow: hidden;
     touch-action: none;
+    -webkit-overflow-scrolling: none; 
+}
+
+body {
+    position: fixed;
     margin: 0.3;
     background-color: rgb(30, 30, 30);
     color: var(--text-color);
     padding-top: 75px;
-    overflow-x: hidden;
-    overflow-y: auto;
     font-family: 'SF Pro', -apple-system, 'Inter', system-ui, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
