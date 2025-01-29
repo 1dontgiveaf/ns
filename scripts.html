@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NS | Website</title>
+    <link rel="icon" type="image/x-icon" href="https://github.com/1dontgiveaf/ns/raw/refs/heads/main/images/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="topbar">
+        <div class="title">
+            <img src="https://github.com/1dontgiveaf/ns/blob/main/images/image.png?raw=true" alt="gyat"></img> NS | Website
+        </div>
+        <div class="tabs">
+            <a href="index.html">Home</a>
+            <a href="scripts.w" class="tabs active">Scripts</a>
+            <a href="executors.html">Executors</a>
+        </div>
+    </div>
+    <div class="home">
+        <footer>
+            <p>© 2025 idontgiveaf. All Rights Reserved. Everything here will be improved.</p>
+        </footer>
+    </div>
+    <div class="container">
+        <h1 style="margin-top: 20px;">NS Scripts</h1>
+        <div id="script-list" class="container2">
+
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        async function addscripts() {
+            const apiUrl = 'https://api.github.com/repos/1dontgiveaf/idontgiveaf.github.io/contents/scripts';
+            try {
+                const response = await fetch(apiUrl);
+                const data = await response.json();
+
+                const scriptList = document.getElementById('script-list');
+                if (!scriptList) {
+                    console.error('no');
+                    return;
+                }
+
+                data.forEach(async item => {
+                    console.log('item:', item.name); // debug
+
+                    if (item.type === 'file' && item.name.endsWith('.lua')) {
+                        const scriptitem = document.createElement('div');
+                        scriptitem.className = 'item';
+                        const sresponse = await fetch(item.download_url);
+                        const content = await sresponse.text();
+
+                        scriptitem.innerHTML = `
+                            <h2>${item.name}</h2>
+                            <p>Click below to copy the script.</p>
+                            <input class="textbox" placeholder="lua" value="${content}"></input>
+                            <button onclick="copy(this)" class="link">Copy</button>
+                        `;
+
+                        scriptList.appendChild(scriptitem);
+                    }
+                });
+            } catch (error) {
+                console.error('error:', error);
+            }
+        }
+
+        function copy(button) {
+            const input = button.previousElementSibling;
+
+            input.select();
+            input.setSelectionRange(0, 99999);
+
+            document.execCommand('copy');
+        }
+
+        document.addEventListener('DOMContentLoaded', addscripts);
+
+    </script>
+</body>
+
+</html>
