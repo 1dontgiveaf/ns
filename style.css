@@ -15,14 +15,14 @@
 
 html, body {
     height: 100%;
-    overflow: hidden;
-    touch-action: none;
-    -webkit-overflow-scrolling: none; 
+    overflow-x: hidden;
+    overflow-y: auto;
+    touch-action: pan-y;
+    -webkit-overflow-scrolling: touch; 
 }
 
 body {
     width: 100%;
-    position: fixed;
     margin: 0.3;
     background-color: rgb(30, 30, 30);
     color: var(--text-color);
