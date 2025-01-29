@@ -30,6 +30,24 @@ body {
     font-family: 'SF Pro', -apple-system, 'Inter', system-ui, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
+body::-webkit-scrollbar {
+    height: 12px;
+    width: 12px;
+}
+
+body::-webkit-scrollbar-track {
+    background: rgb(40, 40, 40);
+}
+
+body::-webkit-scrollbar-thumb {
+    background: rgb(50, 50, 50);
+    border-radius: 10px;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
 h1 {
     line-height: 1.3;
     margin-bottom: 0;
@@ -102,46 +120,6 @@ button:hover {
     flex-direction: row;
     flex-wrap: wrap;
     box-sizing: border-box;
-}
-
-.home {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    box-sizing: border-box;
-}
-
-.homesites {
-    position: absolute;
-    margin-top: 150px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    overflow-y: hidden;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-.homesites::-webkit-scrollbar {
-    height: 12px;
-    width: 2px;
-}
-
-.homesites::-webkit-scrollbar-track {
-    background: rgb(40, 40, 40);
-}
-
-.homesites::-webkit-scrollbar-thumb {
-    background: rgb(50, 50, 50);
-    border-radius: 10px;
-}
-
-.homesites::-webkit-scrollbar-thumb:hover {
-    background: #555;
 }
 
 .item {
