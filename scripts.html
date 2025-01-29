@@ -59,12 +59,14 @@
                         scriptitem.innerHTML = `
                             <h2>${item.name}</h2>
                             <p>Click below to copy the script.</p>
-                            <input class="textbox" placeholder="lua" value="${content}"></input>
-                            <button onclick="window.location.href = "/${item.path}";" style="left: 25px" class="link">Open</button>
+                            <input class="textbox" placeholder="lua">
                             <button onclick="copy(this)" class="link">Copy</button>
+                            <button onclick="window.location.href = "/${item.path}";" style="left: 25px" class="link">Open</button>
                         `;
 
                         scriptList.appendChild(scriptitem);
+                        const inputele = scriptitem.querySelector('.textbox');
+                        inputele.value = content;
                     }
                 });
             } catch (error) {
