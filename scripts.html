@@ -17,7 +17,7 @@
         </div>
         <div class="tabs">
             <a href="index.html">Home</a>
-            <a href="scripts.w" class="tabs active">Scripts</a>
+            <a href="scripts.html" class="tabs active">Scripts</a>
             <a href="executors.html">Executors</a>
         </div>
     </div>
@@ -35,7 +35,7 @@
     <script src="script.js"></script>
     <script>
         async function addscripts() {
-            const apiUrl = 'https://api.github.com/repos/1dontgiveaf/idontgiveaf.github.io/contents/scripts';
+            const apiUrl = 'https://api.github.com/repos/1dontgiveaf/n/contents/scripts';
             try {
                 const response = await fetch(apiUrl);
                 const data = await response.json();
