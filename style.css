@@ -14,18 +14,27 @@
 }
 
 html, body {
+    height: 100%;
     overflow: hidden;
     touch-action: none;
     -webkit-overflow-scrolling: none; 
 }
 
 body {
+    width: 100%;
     position: fixed;
     margin: 0.3;
     background-color: rgb(30, 30, 30);
     color: var(--text-color);
     padding-top: 75px;
     font-family: 'SF Pro', -apple-system, 'Inter', system-ui, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+* {
+    user-select: none;
+    -webkit-user-select: none; 
+    -webkit-touch-callout: none; 
+    -webkit-tap-highlight-color: transparent; 
 }
 
 
@@ -35,19 +44,30 @@ h1 {
 }
 
 h2 {
-    line-height: 0;
-    margin-bottom: 0;
+    line-height: 1;
+    margin: 0px;
 }
 
 p {
     line-height: 1.5;
-    margin-top: 20px;
+    margin-top: 5px;
     margin-bottom: 15px;
 }
 
 footer {
     position: fixed;
     bottom: 20px;
+    z-index: 9999;
+    padding: 20px 10px; 
+    text-align: center;
+    background: #1e1e1e;
+    border-radius: 10px;
+    border: 1px solid rgb(50, 50, 50);
+}
+
+footer p {
+    line-height: 0;
+    margin: 0;
 }
 
 button {
