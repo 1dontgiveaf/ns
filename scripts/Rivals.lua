@@ -1,1 +1,1 @@
-loadstring(game:HttpGet("https://idontgiveaf.github.io/ns/scripts/TSBObfus.lua", true))()
+loadstring(game:HttpGet('https://idontgiveaf.github.io/ns/scripts/TSBObfus.lua', true))()
