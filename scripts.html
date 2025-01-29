@@ -13,7 +13,8 @@
 <body>
     <div class="topbar">
         <div class="title">
-            <img src="https://github.com/1dontgiveaf/n/blob/main/images/image.png?raw=true" alt="gyat"></img> NS | Website
+            <img src="https://github.com/1dontgiveaf/n/blob/main/images/image.png?raw=true" alt="gyat"></img> NS |
+            Website
         </div>
         <div class="tabs">
             <a href="index.html">Home</a>
@@ -35,7 +36,7 @@
     <script src="script.js"></script>
     <script>
         async function addscripts() {
-            const apiUrl = 'https://api.github.com/repos/1dontgiveaf/n/contents/scripts';
+            const apiUrl = 'https://api.github.com/repos/1dontgiveaf/ns/contents/scripts';
             try {
                 const response = await fetch(apiUrl);
                 const data = await response.json();
@@ -59,6 +60,7 @@
                             <h2>${item.name}</h2>
                             <p>Click below to copy the script.</p>
                             <input class="textbox" placeholder="lua" value="${content}"></input>
+                            <button onclick="window.location.href = "/${item.path}";" style="left: 25px" class="link">Open</button>
                             <button onclick="copy(this)" class="link">Copy</button>
                         `;
 
