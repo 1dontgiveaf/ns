@@ -23,7 +23,7 @@ body {
 
 body {
     width: 100%;
-    margin: 0.3;
+    margin: 0;
     background-color: rgb(30, 30, 30);
     color: var(--text-color);
     padding-top: 75px;
@@ -99,6 +99,12 @@ button {
     transition: background 0.3s;
 }
 
+.button--delta { background: rgb(127, 124, 255); }
+.button--delta:hover { background: rgb(94, 92, 189); }
+
+.button--arceus { background: rgb(153, 153, 153); }
+.button--arceus:hover { background: rgb(120, 120, 120); }
+
 button:hover {
     background: #2b532f;
 }
@@ -125,8 +131,8 @@ button:hover {
 .item {
     position: relative;
     width: 300px;
-    height: 225px;
-    flex: 1 1 calc(33.33% - 20px);
+    min-height: 225px;
+    flex-basis: calc(33.33% - 2rem);
     margin: 10px;
     background: rgb(30, 30, 30);
     padding: 25px;
@@ -156,7 +162,6 @@ button:hover {
 }
 
 .link {
-    width: clamp(30px, 60%, 100px);
     position: absolute;
     bottom: 25px;
     right: 25px;
