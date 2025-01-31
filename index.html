@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body style="padding-top: 0px;">
     <div class="topbar">
         <div class="title">
             <img src="https://github.com/1dontgiveaf/n/blob/main/images/image.png?raw=true" alt="gyat"> NS | Website
@@ -21,20 +21,36 @@
             <a href="scripts.html">Scripts</a>
             <a href="executors.html">Executors</a>
         </div>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
     </div>
-    <div class="container">
+    <div class="menu">
+        <a href="index.html" class="tab-item">Home</a>
+        <a href="scripts.html" class="tab-item">Scripts</a>
+        <a href="executors.html" class="tab-item-bottom">Executors</a>
+    </div>
+    <div class="container con--center">
         <footer>
             <p>© 2025 idontgiveaf. All Rights Reserved. Everything here will be improved.</p>
         </footer>
-        <h1 style="margin-top: 20px;">Welcome to the NS website.</h1>
-        <p style="margin-bottom: 25px;">This website has scripts and executors.</p>
+        <h1 class="fontbig">Welcome to the NS website.</h1>
+        <p class="fontsmall" style="margin-bottom: 25px;">This website has scripts and executors.</p>
         <button onclick="window.open('https://discord.gg/ZsCrmA9K5b', '_blank')">Join Discord</button>
     </div>
-    <div class="container2" style="margin-top: 150px;">
-            <div class="item" id="socials">
-                <h2>Discord</h2>
-                <p>To get the keys and updates.</p>
-                <button class="link" style="background: #7289da;" onclick="window.open('https://discord.gg/ZsCrmA9K5b', '_blank')">
+    <div class="con--grad">
+        <h1 class="fontbig">Amazing scripts. Just get it.</h1>
+        <button class="button--get fontsmall" onclick="window.location.href='/scripts.html'">Get Script</button>
+    </div>
+    <div class="container2" style="margin: 150px 0px;">
+        <div class="item" id="socials">
+            <h2>Discord</h2>
+            <p>To get the keys and updates.</p>
+            <div class="botcontainer2">
+                <button class="link" style="background: #7289da;"
+                    onclick="window.open('https://discord.gg/ZsCrmA9K5b', '_blank')">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                         class="lucide lucide-square-arrow-out-up-right">
@@ -44,32 +60,39 @@
                     </svg>
                 </button>
             </div>
-            <div class="item" id="socials">
-                <h2>TikTok</h2>
-                <p>Pure Brainrot</p>
-                <button class="link" style="background: #ff0050;"  onclick="window.open('https://www.tiktok.com/@bigsigmaunderground', '_blank')">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                        class="lucide lucide-square-arrow-out-up-right">
-                        <path d="M21 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h6" />
-                        <path d="m21 3-9 9" />
-                        <path d="M15 3h6v6" />
-                    </svg>
-                </button>
+        </div>
+        <div class="item" id="socials">
+            <h2>TikTok</h2>
+            <p>Pure Brainrot</p>
+            <div class="botcontainer2">
+            <button class="link" style="background: #ff0050;"
+                onclick="window.open('https://www.tiktok.com/@bigsigmaunderground', '_blank')">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-square-arrow-out-up-right">
+                    <path d="M21 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h6" />
+                    <path d="m21 3-9 9" />
+                    <path d="M15 3h6v6" />
+                </svg>
+            </button>
+        </div>
+        </div>
+        <div class="item" id="socials">
+            <h2>YouTube</h2>
+            <p>Potential stuff coming not soon.</p>
+            <div class="botcontainer2">
+            <button class="link" style="background: #FF0000;"
+                onclick="window.open('https://www.youtube.com/@ldontgiveaf', '_blank')">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-square-arrow-out-up-right">
+                    <path d="M21 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h6" />
+                    <path d="m21 3-9 9" />
+                    <path d="M15 3h6v6" />
+                </svg>
+            </button>
             </div>
-            <div class="item" id="socials">
-                <h2>YouTube</h2>
-                <p>Potential stuff coming not soon.</p>
-                <button class="link" style="background: #FF0000;"  onclick="window.open('https://www.youtube.com/@ldontgiveaf', '_blank')">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                        class="lucide lucide-square-arrow-out-up-right">
-                        <path d="M21 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h6" />
-                        <path d="m21 3-9 9" />
-                        <path d="M15 3h6v6" />
-                    </svg>
-                </button>
-            </div>
+        </div>
     </div>
     <script src="script.js">
     </script>

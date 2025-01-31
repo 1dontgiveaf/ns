@@ -22,6 +22,16 @@
             <a href="scripts.html" class="tabs active">Scripts</a>
             <a href="executors.html">Executors</a>
         </div>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="menu">
+            <a href="index.html" class="tab-item">Home</a>
+            <a href="scripts.html" class="tab-item">Scripts</a>
+            <a href="executors.html" class="tab-item-bottom">Executors</a>
+        </div>
     </div>
     <div class="container">
         <footer>
@@ -60,9 +70,11 @@
                         scriptitem.innerHTML = `
                             <h2>${item.name}</h2>
                             <p>Click below to copy the script.</p>
-                            <input class="textbox" placeholder="lua">
-                            <button onclick="copy(this)" class="link">Copy</button>
-                            <button onclick="window.location.href = '/${item.path}';" style="left: 25px" class="link">Open</button>
+                            <input id="${item.name.replace(/\s/g, '-')}" class="textbox" placeholder="lua">
+                            <div class="scriptscontainer">
+                                <button onclick="copy('${item.name.replace(/\s/g, '-')}')">Copy</button>
+                                <button onclick="window.location.href = '/${item.path}';"" class="link">Open</button>
+                            </div>
                         `;
 
                         scriptList.appendChild(scriptitem);
@@ -75,13 +87,12 @@
             }
         }
 
-        function copy(button) {
-            const input = button.previousElementSibling;
-
+        async function copy(element) {
+            const input = document.getElementById(element);
             input.select();
-            input.setSelectionRange(0, 99999);
+            input.setSelectionRange(0, 999999);
 
-            document.execCommand('copy');
+            await navigator.clipboard.writeText(input.value);
         }
 
         document.addEventListener('DOMContentLoaded', addscripts);
