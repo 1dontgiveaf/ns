@@ -328,6 +328,8 @@ button:hover {
 
 .menu a {
     display: block;
+    text-decoration: none;
+    color: white;
 }
 
 .menu.open {
