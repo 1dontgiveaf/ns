@@ -57,7 +57,8 @@ body::-webkit-scrollbar-thumb:hover {
     font-size: clamp(1rem, calc(1rem + 0.5vw), 1.875rem);
 }
 
-h1, h2 {
+h1,
+h2 {
     line-height: 1.3;
     margin: 0px;
 }
@@ -102,7 +103,7 @@ button {
     font-size: 1rem;
     border: none;
     border-radius: var(--radius-small);
-    transition: all 0.3s ease;
+    transition: color 0.3s ease;
     cursor: pointer;
 }
 
@@ -135,56 +136,73 @@ button:hover {
     background-color: #2b532f;
 }
 
-.container {
+.container,
+.container2,
+.botcontainer,
+.botcontainer2,
+.scriptscontainer {
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    flex-direction: column;
     box-sizing: border-box;
 }
 
+/* containers */
+
+.container {
+    flex-direction: column;
+}
+
+.container2 {
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+/* bottom containers */
+
 .botcontainer {
     position: absolute;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
     flex-direction: column;
-    box-sizing: border-box;
     bottom: 20px;
 }
 
 .botcontainer2 {
     position: absolute;
-    left: 0;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
     flex-direction: row;
-    box-sizing: border-box;
     width: 100%;
+    left: 0;
     bottom: 20px;
 }
+
+/* other */
+
+.scriptscontainer {
+    position: absolute;
+    padding: 0px 25px;
+    bottom: 20px;
+    width: 100%;
+    justify-content: space-between;
+    flex-direction: row;
+    left: 0;
+}
+
+/* home top */
 
 .con--center {
     height: 100vh;
 }
 
 .con--center::before {
-    content: '';
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(
-        180deg,
-        rgba(58, 119, 45, 0.2),
-        rgba(0, 5, 0, 0) 70%,
-        rgba(0, 5, 0, 0) 100%
-    );
+    background: linear-gradient(180deg,
+            rgba(58, 119, 45, 0.2),
+            rgba(0, 5, 0, 0) 70%,
+            rgba(0, 5, 0, 0) 100%);
     animation: fadeOpacity 2s infinite ease-in-out alternate;
     pointer-events: none;
 }
@@ -193,10 +211,13 @@ button:hover {
     0% {
         opacity: 0.3;
     }
+
     100% {
         opacity: 1;
     }
 }
+
+/* home middle */
 
 .con--grad {
     box-sizing: border-box;
@@ -207,57 +228,33 @@ button:hover {
     align-items: flex-start;
     flex-direction: column;
     background: linear-gradient(0deg,
-            rgba(0, 5, 0, 0),
-            rgba(175, 45, 45, 0.5),
-            rgba(0, 5, 0, 0)
-            );
+            rgba(0, 5, 0, 0) 0%,
+            rgba(255, 45, 45, 0.4) 50%,
+            rgba(0, 5, 0, 0) 100%);
 }
 
 .con--grad h1 {
     letter-spacing: 1px;
 }
 
-.container2 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    flex-direction: row;
-    flex-wrap: wrap;
-    box-sizing: border-box;
-}
-
-.scriptscontainer {
-    position: absolute;
-    left: 0;
-    padding: 0px 25px;
-    bottom: 20px;
-    width: 100%;
-    display: flex;
-    text-align: center;
-    justify-content: space-between;
-    flex-direction: row;
-    box-sizing: border-box;
-}
-
 .item {
     position: relative;
+    background: rgb(0, 5, 0);
     width: 300px;
     min-height: 200px;
-    flex: 1 1 280px;
-    margin: 20px;
-    background: rgb(0, 5, 0);
     padding: 25px;
-    border-radius: var(--radius-normal);
+    margin: 20px;
     border: 1px solid rgb(50, 50, 50);
+    border-radius: var(--radius-normal);
     box-shadow: 0px 0px 20px rgb(40, 40, 40);
     box-sizing: border-box;
+    flex: 1 1 280px;
 }
 
 .textbox {
     background: #1e1e1e;
-    width: calc(100% - 25px);
     color: var(--text-color);
+    width: calc(100% - 25px);
     border: 1px solid rgb(50, 50, 50);
     border-radius: var(--radius-small);
     padding: 10px 10px;
@@ -278,8 +275,6 @@ button:hover {
 
 .topbar {
     position: fixed;
-    top: 0;
-    left: 0;
     width: 100%;
     background: rgba(0, 5, 0, 0.3);
     overflow-x: auto;
@@ -291,6 +286,8 @@ button:hover {
     backdrop-filter: blur(30px);
     border-bottom: 1px solid rgb(50, 50, 50);
     box-sizing: border-box;
+    top: 0;
+    left: 0;
 }
 
 .title {
@@ -311,6 +308,21 @@ button:hover {
     display: unset;
 }
 
+.tabs a {
+    color: var(--text-color);
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+}
+
+.tabs a:hover {
+    text-decoration: underline;
+}
+
+.tabs.active {
+    font-weight: 900;
+}
+
 .hamburger {
     display: none;
     cursor: pointer;
@@ -327,57 +339,55 @@ button:hover {
 
 
 .hamburger.open span:nth-child(1) {
-	transform: rotate(-45deg) translateY(11px); 
+    transform: rotate(-45deg) translateY(11px);
 }
 
 .hamburger.open span:nth-child(2) {
-	opacity: 0;
+    opacity: 0;
     transform: scale(0.5);
 }
 
 .hamburger.open span:nth-child(3) {
-	transform: rotate(45deg) translateY(-11px);
+    transform: rotate(45deg) translateY(-11px);
 }
 
 .menu {
-    opacity: 0;
     position: fixed;
-    visibility: hidden;
-    top: 55px;
-    right: 10px;
+    background: rgba(0, 5, 0, 0.3);
     width: 200px;
     backdrop-filter: blur(30px);
-    z-index: 9999;
     padding: 10px 10px;
     border: 1px solid rgb(50, 50, 50);
     border-radius: var(--radius-normal);
-    background: rgba(0, 5, 0, 0.3);
     box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
-	transition: opacity 0.3s ease, visibility 0s;
+    opacity: 0;
+    transition: opacity 0.3s ease, visibility 0s;
+    z-index: 9999;
+    top: 55px;
+    right: 10px;
+    visibility: hidden;
 }
 
 .menu a {
     display: block;
-    text-decoration: none;
     color: white;
+    text-decoration: none;
 }
 
 .menu.open {
     opacity: 1;
+    transition: opacity 0.3s ease, visibility 0s;
     visibility: visible;
-	transition: opacity 0.3s ease, visibility 0s;
 }
 
-.tab-item {
+.tab-item, .ti-bottom {
     padding: 10px;
     border-bottom: 1px solid rgb(50, 50, 50);
     cursor: pointer;
 }
 
-.tab-item-bottom {
-    padding: 10px;
+.ti-bottom {
     border: none;
-    cursor: pointer;
 }
 
 @media (max-width: 525px) {
@@ -391,24 +401,7 @@ button:hover {
 }
 
 @media (min-width: 525px) {
-	.menu {
+    .menu {
         visibility: hidden;
-	}
+    }
 }
-
-.tabs a {
-    color: var(--text-color);
-    text-decoration: none;
-    margin: 0 15px;
-    font-size: 18px;
-}
-
-.tabs a:hover {
-    text-decoration: underline;
-}
-
-.tabs.active {
-    font-weight: 900;
-}
-
-/* button sets */
