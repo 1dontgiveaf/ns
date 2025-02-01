@@ -103,8 +103,11 @@ button {
     font-size: 1rem;
     border: none;
     border-radius: var(--radius-small);
-    transition: color 0.3s ease;
+    transition: filter 0.2s ease;
     cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
 }
 
 .button--get {
@@ -112,28 +115,16 @@ button {
     margin-top: 20px;
 }
 
-.button--get:hover {
-    background-color: rgb(150, 45, 45);
-}
-
 .button--delta {
     background-color: rgb(127, 124, 255);
-}
-
-.button--delta:hover {
-    background-color: rgb(94, 92, 189);
 }
 
 .button--arceus {
     background-color: rgb(153, 153, 153);
 }
 
-.button--arceus:hover {
-    background-color: rgb(120, 120, 120);
-}
-
 button:hover {
-    background-color: #2b532f;
+    filter: brightness(0.6);
 }
 
 .container,
@@ -200,10 +191,10 @@ button:hover {
     right: 0;
     bottom: 0;
     background: linear-gradient(180deg,
-            rgba(58, 119, 45, 0.2),
-            rgba(0, 5, 0, 0) 70%,
-            rgba(0, 5, 0, 0) 100%);
+            rgba(58, 119, 45, 0.5) 0%,
+            rgba(0, 5, 0, 0) 50%);
     animation: fadeOpacity 2s infinite ease-in-out alternate;
+    content: "";
     pointer-events: none;
 }
 
@@ -296,6 +287,7 @@ button:hover {
     font-size: 24px;
     margin-left: 10px;
     font-weight: bolder;
+    letter-spacing: 1px;
 }
 
 .title img {
@@ -380,7 +372,8 @@ button:hover {
     visibility: visible;
 }
 
-.tab-item, .ti-bottom {
+.tab-item,
+.ti-bottom {
     padding: 10px;
     border-bottom: 1px solid rgb(50, 50, 50);
     cursor: pointer;
