@@ -27,7 +27,7 @@ body {
     color: var(--text-color);
     padding: 85px 0px;
     padding-bottom: 100px;
-    font-family: 'SF Pro', -apple-system, 'Inter', system-ui, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: -apple-system, "SF Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 body::-webkit-scrollbar {
