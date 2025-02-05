@@ -1,8 +1,7 @@
 :root {
     --small-margin: 5px;
     --text-color: #fff;
-    --radius-small: 10px;
-    --radius-normal: 20px;
+    --radius-default: 15px;
 }
 
 @font-face {
@@ -24,9 +23,9 @@ body {
 body {
     width: 100%;
     margin: 0;
-    background: rgb(0, 5, 0);
+    background: linear-gradient(45deg, rgba(0, 20, 0) 0%, rgb(0, 5, 0) 50%);
     color: var(--text-color);
-    padding: 75px 0px;
+    padding: 85px 0px;
     padding-bottom: 100px;
     font-family: 'SF Pro', -apple-system, 'Inter', system-ui, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
@@ -42,7 +41,7 @@ body::-webkit-scrollbar-track {
 
 body::-webkit-scrollbar-thumb {
     background: rgb(50, 50, 50);
-    border-radius: 10px;
+    border-radius: var(--radius-default);
 }
 
 body::-webkit-scrollbar-thumb:hover {
@@ -78,7 +77,7 @@ footer {
     margin: 0px 20px;
     text-align: center;
     background: rgb(0, 5, 0);
-    border-radius: var(--radius-normal);
+    border-radius: var(--radius-default);
     border: 1px solid rgb(50, 50, 50);
     bottom: 20px;
     box-sizing: border-box;
@@ -96,18 +95,35 @@ footer p {
 }
 
 button {
-    background-color: #3a772d;
+    background: rgb(25, 60, 25);
     color: var(--text-color);
     flex: 0;
-    padding: 10px 20px;
+    padding: 15px 25px;
     font-size: 1rem;
     border: none;
-    border-radius: var(--radius-small);
-    transition: filter 0.2s ease;
+    border-radius: var(--radius-default);
+    transition: filter 0.2s, transform 0.2s ease;
     cursor: pointer;
-    text-transform: uppercase;
+}
+
+.button--items {
+    width: 100%;
     font-weight: bold;
-    letter-spacing: 1px;
+    padding-top: 0.625rem; /* 10px */
+    padding-bottom: 0.625rem; /* 10px */
+    padding-left: 1rem; /* 16px */
+    padding-right: 1rem; /* 16px */
+    border-radius: 0.5rem; /* 8px */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    margin-top: auto;
+    transition: all 0.3s ease;
+  }
+
+.button--default {
+    border: 1px solid #3a772d;
 }
 
 .button--get {
@@ -124,7 +140,8 @@ button {
 }
 
 button:hover {
-    filter: brightness(0.6);
+    transform: scale(1.05);
+    filter: brightness(1.2);
 }
 
 .container,
@@ -153,29 +170,23 @@ button:hover {
 /* bottom containers */
 
 .botcontainer {
-    position: absolute;
+    margin-top: auto;
     flex-direction: column;
-    bottom: 20px;
 }
 
 .botcontainer2 {
-    position: absolute;
+    margin-top: auto;
     flex-direction: row;
     width: 100%;
-    left: 0;
-    bottom: 20px;
 }
 
 /* other */
 
 .scriptscontainer {
-    position: absolute;
-    padding: 0px 25px;
-    bottom: 20px;
+    margin-top: auto;
     width: 100%;
     justify-content: space-between;
     flex-direction: row;
-    left: 0;
 }
 
 /* home top */
@@ -230,14 +241,18 @@ button:hover {
 
 .item {
     position: relative;
-    background: rgb(0, 5, 0);
+    background: rgba(0, 5, 0, 0.1);
     width: 300px;
-    min-height: 200px;
-    padding: 25px;
+    min-height: 250px;
+    padding: 30px;
     margin: 20px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    backdrop-filter: blur(30px);
     border: 1px solid rgb(50, 50, 50);
-    border-radius: var(--radius-normal);
-    box-shadow: 0px 0px 20px rgb(40, 40, 40);
+    border-radius: var(--radius-default);
+    box-shadow: 0px 0px 40px rgb(0, 30, 0);
     box-sizing: border-box;
     flex: 1 1 280px;
 }
@@ -247,7 +262,7 @@ button:hover {
     color: var(--text-color);
     width: calc(100% - 25px);
     border: 1px solid rgb(50, 50, 50);
-    border-radius: var(--radius-small);
+    border-radius: var(--radius-default);
     padding: 10px 10px;
 }
 
@@ -273,7 +288,7 @@ button:hover {
     justify-content: space-between;
     align-items: center;
     z-index: 9998;
-    padding: 20px 20px;
+    padding: 25px 20px;
     backdrop-filter: blur(30px);
     border-bottom: 1px solid rgb(50, 50, 50);
     box-sizing: border-box;
@@ -303,16 +318,21 @@ button:hover {
 .tabs a {
     color: var(--text-color);
     text-decoration: none;
-    margin: 0 15px;
-    font-size: 18px;
+    margin: 0px 5px;
+    font-size: 16px;
+    border-radius: var(--radius-default);
+    background: rgba(50, 50, 50, 0.5);
+    padding: 10px 15px;
+    transition: all 0.3s ease;
 }
 
 .tabs a:hover {
-    text-decoration: underline;
+    filter: brightness(1.2);
 }
 
 .tabs.active {
-    font-weight: 900;
+    font-weight: 600;
+    background: rgb(58, 119, 45, 0.3);
 }
 
 .hamburger {
@@ -369,7 +389,7 @@ button:hover {
     backdrop-filter: blur(30px);
     padding: 10px 10px;
     border: 1px solid rgb(50, 50, 50);
-    border-radius: var(--radius-normal);
+    border-radius: var(--radius-default);
     box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
     opacity: 0;
     transition: opacity 0.3s ease, visibility 0s;
@@ -402,7 +422,7 @@ button:hover {
     border: none;
 }
 
-@media (max-width: 525px) {
+@media (max-width: 655px) {
     .tabs {
         display: none;
     }
@@ -412,7 +432,7 @@ button:hover {
     }
 }
 
-@media (min-width: 525px) {
+@media (min-width: 655px) {
     .menu {
         visibility: hidden;
     }
